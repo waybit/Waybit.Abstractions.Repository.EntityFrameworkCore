@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waybit.Abstractions.Repository.EntityFrameworkCore", "Waybit.Abstractions.Repository.EntityFrameworkCore\Waybit.Abstractions.Repository.EntityFrameworkCore.csproj", "{748F91D0-E264-4CB4-8402-A10736769C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests", "Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests\Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests.csproj", "{08473F87-69DB-42E0-89D5-AE670701DCA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{748F91D0-E264-4CB4-8402-A10736769C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748F91D0-E264-4CB4-8402-A10736769C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748F91D0-E264-4CB4-8402-A10736769C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748F91D0-E264-4CB4-8402-A10736769C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08473F87-69DB-42E0-89D5-AE670701DCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08473F87-69DB-42E0-89D5-AE670701DCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08473F87-69DB-42E0-89D5-AE670701DCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08473F87-69DB-42E0-89D5-AE670701DCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
