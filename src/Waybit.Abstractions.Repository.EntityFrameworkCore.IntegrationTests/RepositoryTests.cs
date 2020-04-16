@@ -109,7 +109,7 @@ namespace Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests
 			{
 				actual =  await scope
 					.Repository
-					.AddAsync(newFakeAggregateRoot, _cancellationToken);
+					.SaveAsync(newFakeAggregateRoot, _cancellationToken);
 			}
 			
 			// Assert
@@ -139,7 +139,7 @@ namespace Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests
 				existed.ChangeName(updatedName);
 				await scope
 					.Repository
-					.UpdateAsync(existed, _cancellationToken);
+					.SaveAsync(existed, _cancellationToken);
 			}
 			
 			// Assert
@@ -148,6 +148,26 @@ namespace Waybit.Abstractions.Repository.EntityFrameworkCore.IntegrationTests
 				.SingleAsync(f => f.Id == existed.Id, _cancellationToken);
 			
 			expected.Name.ShouldBe(updatedName);
+		}
+
+		[Test]
+		public async Task Can_remove()
+		{
+			// Arrange
+			Preconditions.EnsureRandomFake();
+			FakeAggregateRoot existed = await DbContext
+				.FakeAggregateRoots
+				.FirstOrDefaultAsync(_cancellationToken);
+			
+			// Act
+			using (RepositoryScope scope = CreateScope())
+			{
+				await scope.Repository.RemoveAsync(existed, _cancellationToken);
+			}
+			
+			// Assert
+			bool isAny = await DbContext.FakeAggregateRoots.AnyAsync();
+			isAny.ShouldBeFalse();
 		}
 	}
 }

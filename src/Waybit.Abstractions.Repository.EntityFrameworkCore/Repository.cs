@@ -48,22 +48,19 @@ namespace Waybit.Abstractions.Repository.EntityFrameworkCore
 		}
 
 		/// <inheritdoc />
-		public virtual async Task<TKey> AddAsync(TEntity entity, CancellationToken cancellationToken)
+		public virtual async Task<TKey> SaveAsync(TEntity entity, CancellationToken cancellationToken)
 		{
 			EntityEntry<TEntity> entry = _dbContext
 				.Set<TEntity>()
-				.Add(entity);
+				.Update(entity);
 
-			await _dbContext.SaveChangesAsync(cancellationToken);
-			
 			return entry.Entity.Id;
 		}
 
 		/// <inheritdoc />
-		public virtual async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken)
+		public async Task RemoveAsync(TEntity entity, CancellationToken cancellationToken)
 		{
-			_dbContext.Update(entity);
-			await _dbContext.SaveChangesAsync(cancellationToken);
+			_dbContext.Remove(entity);
 		}
 	}
 }

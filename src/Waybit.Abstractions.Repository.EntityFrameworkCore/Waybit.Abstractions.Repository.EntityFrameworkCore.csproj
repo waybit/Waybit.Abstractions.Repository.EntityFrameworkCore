@@ -16,7 +16,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
-      <PackageReference Include="Waybit.Abstractions.Domain" Version="1.0.1" />
+      <PackageReference Include="Waybit.Abstractions.Domain" Version="1.0.1-unstable-10" />
     </ItemGroup>
 
 </Project>
